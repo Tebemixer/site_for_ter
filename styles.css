@@ -569,7 +569,7 @@ h3 {
 .contacts-section {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 380px;
-  gap: clamp(24px, 6vw, 72px);
+  gap: 24px clamp(24px, 6vw, 72px);
   align-items: center;
 }
 
@@ -607,6 +607,54 @@ h3 {
   font-size: 1.08rem;
 }
 
+.qr-panel {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.qr-card {
+  margin: 0;
+}
+
+.qr-card a {
+  display: grid;
+  gap: 12px;
+  justify-items: center;
+  height: 100%;
+  padding: 16px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  transition:
+    transform 160ms ease,
+    border-color 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.qr-card a:hover {
+  transform: translateY(-1px);
+  border-color: #c8c2b4;
+  box-shadow: 0 10px 24px rgba(17, 19, 22, 0.08);
+}
+
+.qr-card img {
+  width: 132px;
+  height: 132px;
+  padding: 8px;
+  object-fit: contain;
+  background: #ffffff;
+  border: 1px solid #ece9df;
+  border-radius: 6px;
+}
+
+.qr-card figcaption {
+  color: #31343a;
+  font-weight: 800;
+  text-align: center;
+}
+
 .site-footer {
   display: flex;
   flex-wrap: wrap;
@@ -642,7 +690,8 @@ h3 {
 
   .trust-strip,
   .price-grid,
-  .gallery-grid {
+  .gallery-grid,
+  .qr-panel {
     grid-template-columns: 1fr;
   }
 
